@@ -1,6 +1,5 @@
 Timestamp: 2019-03-10 20:05:50.691707
 Vectorization: g
-Evaluation: a
 Atheism: 72.73%
 Climate Change is a Real Concern: 72.78%
 Feminist Movement: 64.21%

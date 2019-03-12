@@ -6,7 +6,7 @@ import vectorize
 from sklearn.naive_bayes import GaussianNB
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
 from sklearn.svm import SVC
-from sklearn.model_selection import cross_validate as cross_validation
+from sklearn.model_selection import cross_validate as cross_validation, ShuffleSplit, cross_val_score
 
 def labelStance(labelDict, data):
 	for key, val in labelDict.items():
@@ -40,10 +40,7 @@ if __name__ == "__main__":
 	elif vect == 'g':
 		print "\nLoading glove data..."
 		glove_word_vec_dict = readGlobalVecData(gloveFile)
-	choice = raw_input("\nChoose evaluation method\n'k' for k-fold on training data\n'a' for calculating accuracy on test data\n: ").strip()
-	if choice not in ['k', 'a']:
-		print "Wrong choice for evaluation of model.. terminating..."
-		sys.exit(0)
+	choice = 'a'
 	print "Thanks for your inputs...processing input now..."
 	logMsg += "Vectorization: "+vect+"\n"+"Evaluation: "+choice+"\n"
 
@@ -73,13 +70,6 @@ if __name__ == "__main__":
 				clf = SVC(kernel="rbf").fit(Xtrain, Ytrain)
 				acc = clf.score(Xtest, Ytest)
 				print "Test accuracy score by SVC for "+target+":", acc
-		else:
-			if classifier.lower() == "svc":
-				clf = SVC(kernel="rbf")
-			cv = cross_validation.ShuffleSplit(len(Xtrain), n_iter=1, test_size = 0.1, random_state=0)
-			accL = list(cross_validation.cross_val_score(clf, Xtrain, Ytrain, cv=cv))
-			acc = float(sum(accL))/len(accL)
-			print "K-fold accuracy score for "+target+":", acc
 		totalAcc += acc
 		logMsg += target+": "+ str(round(acc*100,2))+"%"+"\n"
 	overallAcc = totalAcc/len(uniqTrainTargets)
