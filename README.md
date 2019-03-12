@@ -1,1 +1,1 @@
-# live-video-captioning
+# STANCE DETECTION FROM TWITTER TWEETS
