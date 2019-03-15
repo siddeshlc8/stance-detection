@@ -3,8 +3,6 @@ import re
 import numpy as np
 from nltk.corpus import words
 from nltk.tokenize import word_tokenize
-from nltk.stem.snowball import SnowballStemmer
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
 def getWordVector(word, glove_word_vec_dict):
 	if word in glove_word_vec_dict:
@@ -62,13 +60,13 @@ def glove(glove_word_vec_dict, trainTweets, testTweets):
 			# create tokens from the string and stem them
 			wordList = word_tokenize(s)
 
-			print wordList
+			
 
 			for word in wordList:
 				#to break any combined word into its components for eg, hashtags
 				finalList += simplify(word)
 
-			print finalList
+			
 
 			final_sentence = ' '.join(finalList)
 			listOfTweets.append(final_sentence)
