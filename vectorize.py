@@ -48,7 +48,7 @@ def glove(glove_word_vec_dict, trainTweets, testTweets):
 		for ind, row in data.iterrows():
 			
 			# Create a sentence using target and the tweet. Word vector will be formed from this.
-			example_sentence = str(row["Target"]) + " " + str(row["Tweet"])
+			example_sentence = u' '.join((row["Target"], row["Tweet"])).encode('utf-8').strip()
 
 			# Remove punctuation
 			final_sentence = example_sentence.translate(None, string.punctuation)
