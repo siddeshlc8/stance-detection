@@ -25,8 +25,8 @@ def readGlobalVecData(glove_word_vec_file):
 if __name__ == "__main__":
 	start = datetime.datetime.now()
 
-	training = "Dataset-SemEval2016/example.txt"
-	test = "Dataset-SemEval2016/example.txt"
+	training = "Dataset-SemEval2016/training.txt"
+	test = "Dataset-SemEval2016/test-gold.txt"
 
 	gloveFile = "/home/siddeshlc8/siddeshlc/Glove Vectorization/glove.twitter.27B.200d.txt"
 	
@@ -35,36 +35,39 @@ if __name__ == "__main__":
 	logMsg = "Timestamp: "+str(datetime.datetime.now())+"\n"
 
 	print "\nLoading glove data..."
-	glove_word_vec_dict = readGlobalVecData(gloveFile)
+	#glove_word_vec_dict = readGlobalVecData(gloveFile)
 
-	trainTweets = pd.read_csv(training, sep='\t',header=0)
-	testTweets = pd.read_csv(test, sep='\t',header=0)
+	trainTweets = pd.read_csv(training, sep='\t',header=0,encoding='utf-8')
+	testTweets = pd.read_csv(test, sep='\t',header=0,encoding='utf-8')
 	uniqTrainTargets = trainTweets.Target.unique()
 
+	trainTweets.to_csv("train.csv",encoding='utf-8')
+	testTweets.to_csv("test.csv",encoding='utf-8')
+
 	# For converting all the stances into numerical values in both training and test data
-	labelDict = {0:"AGAINST", 1:"FAVOR", 2:"NONE"}
-	trainTweets = labelStance(labelDict, trainTweets)
-	testTweets = labelStance(labelDict, testTweets)
+	# labelDict = {0:"AGAINST", 1:"FAVOR", 2:"NONE"}
+	# trainTweets = labelStance(labelDict, trainTweets)
+	# testTweets = labelStance(labelDict, testTweets)
 
-	totalAcc = 0
-	for target in uniqTrainTargets:
+	# totalAcc = 0
+	# for target in uniqTrainTargets:
 
-		print "Vectorizing the input and building model for "+target+"..."
-		Xtrain, Ytrain, Xtest, Ytest = vectorize.glove(glove_word_vec_dict, trainTweets[trainTweets["Target"]==target], testTweets[testTweets["Target"]==target])
+	# 	print "Vectorizing the input and building model for "+target+"..."
+	# 	Xtrain, Ytrain, Xtest, Ytest = vectorize.glove(glove_word_vec_dict, trainTweets[trainTweets["Target"]==target], testTweets[testTweets["Target"]==target])
 
-		clf = SVC(kernel="rbf").fit(Xtrain, Ytrain)
-		acc = clf.score(Xtest, Ytest)
-		print "Test accuracy score by SVC for "+target+":", acc
+	# 	clf = SVC(kernel="rbf").fit(Xtrain, Ytrain)
+	# 	acc = clf.score(Xtest, Ytest)
+	# 	print "Test accuracy score by SVC for "+target+":", acc
 
-		totalAcc += acc
-		logMsg += target+": "+ str(round(acc*100,2))+"%"+"\n"
+	# 	totalAcc += acc
+	# 	logMsg += target+": "+ str(round(acc*100,2))+"%"+"\n"
 
-	overallAcc = totalAcc/len(uniqTrainTargets)
-	logMsg += "Overall accuracy: "+str(round(overallAcc*100,2))+"%"+"\n"
-	print "\nOverall accuracy: "+str(round(overallAcc*100,2))+"%"
-	logMsg += str(clf)+"\n"
-	logMsg += "*"*150+"\n"+"\n"
-	log.write(logMsg)
-	log.close()
+	# overallAcc = totalAcc/len(uniqTrainTargets)
+	# logMsg += "Overall accuracy: "+str(round(overallAcc*100,2))+"%"+"\n"
+	# print "\nOverall accuracy: "+str(round(overallAcc*100,2))+"%"
+	# logMsg += str(clf)+"\n"
+	# logMsg += "*"*150+"\n"+"\n"
+	# log.write(logMsg)
+	# log.close()
 
-	print "Total execution time:", (datetime.datetime.now() - start).total_seconds(), "seconds"
+	# print "Total execution time:", (datetime.datetime.now() - start).total_seconds(), "seconds"

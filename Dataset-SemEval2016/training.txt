@@ -8,7 +8,7 @@ ID	Target	Tweet	Stance
 107	Atheism	Papa God, i pray that You shower me with more patience.  #worththewait #SemST	AGAINST
 108	Atheism	Now that the SCOC has ruled Canadians have freedom from religion, can someone tell Harper to dummy his 'god bless Canada'. #cdnpoli #SemST	FAVOR
 109	Atheism	Wow, unsubstantiated claims about spooks. Remember whe I said there were gullible people? @jvx242 #SemST	NONE
-110	Atheism	RT "...That kind of modesty is too arrogant for me."Õ¢ëÑëÓChristopher Hitchens 2/2" #Funny #SemST	NONE
+110	Atheism	RT "...That kind of modesty is too arrogant for me."√ç¬¢‚Äò‚Äû‚Äò√ÆChristopher Hitchens 2/2" #Funny #SemST	NONE
 111	Atheism	Everyone is able to believe in whatever they want. #Freedom #SemST	FAVOR
 112	Atheism	The best of you are those who best treat their women. And I am the best of people to my women." Prophet Mohammad (PBUH #islam #SemST	AGAINST
 113	Atheism	RT @prayerbullets: Let the righteousness, peace, and joy of the kingdom be established in my life -Rom. 14:17 #SemST	AGAINST
@@ -1726,7 +1726,7 @@ ID	Target	Tweet	Stance
 1825	Hillary Clinton	I think I am going to vote for Monica Lewinsky's Ex- boyfriends Wife #SemST	FAVOR
 1826	Hillary Clinton	And the working american tax payer keeps on paying for the unethical liberals who want to destroy this great country of ours. #SemST	AGAINST
 1827	Hillary Clinton	Hillary Clinton vs. Bernie Sanders primary will be like the brawl over applesauce at the retirement home. #ReadyForHillary #SemST	FAVOR
-1828	Hillary Clinton	Too many women in too many countries speak the same language Õ¢ëÑëÓ of silence. HILLARY CLINTON #HillaryCliton #Hillary4Women #SemST	FAVOR
+1828	Hillary Clinton	Too many women in too many countries speak the same language √ç¬¢‚Äò‚Äû‚Äò√Æ of silence. HILLARY CLINTON #HillaryCliton #Hillary4Women #SemST	FAVOR
 1829	Hillary Clinton	Too many women in too many countries speak the same language  of silence. HILLARY CLINTON #HillaryCliton #Hillary4Women #SemST	FAVOR
 1830	Hillary Clinton	Always aim high,work hard, & care deeply about what U believe in...when U stumble, keep faith. HILLARY CLINTON @Faith4Hillary #SemST	FAVOR
 1831	Hillary Clinton	It's time that we move from good words 2 good works, from sound bites 2 sound solutions HILLARY CLINTON #HillaryClinton #SemST	FAVOR
